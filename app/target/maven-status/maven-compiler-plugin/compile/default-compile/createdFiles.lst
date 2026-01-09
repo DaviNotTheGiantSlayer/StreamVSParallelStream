@@ -1,0 +1,10 @@
+META-INF/CompilerHints
+com/mycompany/app/jmh_generated/StreamBenchmark_jmhType_B3.class
+com/mycompany/app/jmh_generated/StreamBenchmark_somaSequencial_jmhTest.class
+META-INF/BenchmarkList
+com/mycompany/app/App.class
+com/mycompany/app/jmh_generated/StreamBenchmark_jmhType_B2.class
+com/mycompany/app/jmh_generated/StreamBenchmark_jmhType_B1.class
+com/mycompany/app/jmh_generated/StreamBenchmark_somaParalela_jmhTest.class
+com/mycompany/app/StreamBenchmark.class
+com/mycompany/app/jmh_generated/StreamBenchmark_jmhType.class
