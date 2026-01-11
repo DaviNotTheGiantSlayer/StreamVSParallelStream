@@ -6,3 +6,6 @@ dontinline,*.*_thrpt_jmhStub
 inline,com/mycompany/app/StreamBenchmark.setup
 inline,com/mycompany/app/StreamBenchmark.somaParalela
 inline,com/mycompany/app/StreamBenchmark.somaSequencial
+inline,com/mycompany/app/StreamBenchmarkMapping.mapeamentoParalelo
+inline,com/mycompany/app/StreamBenchmarkMapping.mapeamentoSequencial
+inline,com/mycompany/app/StreamBenchmarkMapping.setup

@@ -2,7 +2,8 @@ package com.mycompany.app;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.IntStream;
+import java.util.stream.LongStream;
+
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
@@ -24,31 +25,57 @@ import org.openjdk.jmh.annotations.Warmup;
 @State(Scope.Benchmark)
 public class StreamBenchmark {
 
-    private List<Integer> dados;
-    private List<Double> dadosDouble;
+    // private List<Integer> dados;
+    // private List<Double> dados;
+    private List<Long> dados;
 
-    @Param({"10", "100", "1000", "10000", "100000", "1000000", "1000000", "10000000", "100000000"})
+    @Param({"10", "100", "1000", "10000", "100000", "1000000", "10000000", "100000000"})
     private int tamanho;
 
     @Setup(Level.Trial)
     public void setup() {
-        dados = IntStream.range(0, tamanho)
-                         .boxed()
-                         .toList();
-        // dadosDouble = IntStream.range(0, tamanho).mapToDouble().boxed().toList();
+        // dados = IntStream.range(0, tamanho)
+        //                  .boxed()
+        //                  .toList();
+
+        // dados = IntStream.range(0, tamanho)
+        //                  .mapToDouble(i -> i * 1.0)
+        //                  .boxed()
+        //                  .toList();
+
+        dados = LongStream.range(0, tamanho)
+                          .boxed()
+                          .toList();
     }
 
     @Benchmark
-    public int somaSequencial() {
+    public long somaSequencial() {
+        // return dados.stream()
+        //             .mapToInt(Integer::intValue)
+        //             .sum();
+
+        // return dados.stream()
+        //             .mapToDouble(Double::doubleValue)
+        //             .sum();
+
         return dados.stream()
-                    .mapToInt(Integer::intValue)
+                    .mapToLong(Long::longValue)
                     .sum();
+        
     }
 
     @Benchmark
-    public int somaParalela() {
+    public long somaParalela() {
+        // return dados.parallelStream()
+        //             .mapToInt(Integer::intValue)
+        //             .sum();
+
+        // return dados.parallelStream()
+        //             .mapToDouble(Double::doubleValue)
+        //             .sum();
+
         return dados.parallelStream()
-                    .mapToInt(Integer::intValue)
+                    .mapToLong(Long::longValue)
                     .sum();
     }
 }

@@ -10,7 +10,7 @@ public class App
     public static void main( String[] args )
     {
         Options opt = new OptionsBuilder()
-                .include(StreamBenchmark.class.getSimpleName())
+                .include(StreamBenchmarkMapping.class.getSimpleName())
                 .build();
 
         try {
